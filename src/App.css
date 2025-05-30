@@ -1,9 +1,25 @@
-#root {
+@import "tailwindcss";
+/* @theme {
+ 
+     
+    
+} */
+
+:root {
+    --background-image-primary-gradient: linear-gradient(30deg, #DC02C3, #5C53FE);
+    --background-image-custom-gradient: linear-gradient(to right, #3B82F6, #8B5CF6);
+     /* Replace with actual color values */
+    --background-image-another-gradient: linear-gradient(45deg, #f06, #9f6);
+
+    /* You can also define gradients using Tailwind's color variables if available as CSS variables */
+    --my-special-gradient: linear-gradient(to bottom right, var(--color-pink-500, #EC4899), var(--color-orange-500, #F59E42));
+}
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+} */
 
 .logo {
   height: 6em;
