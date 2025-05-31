@@ -16,11 +16,11 @@ function TodoContainer() {
             space-y-3 bg-[linear-gradient(to_right,_#DC02C3,_#5C53FE)]">
                 <div className=" p-3 h-full rounded-xl space-y-3 w-full">
                     <div className="flex bg-gray-800 rounded-xl font-semibold justify-between p-5 ">
-                        <input type="checkbox" name="" id="" />
-                        <p>Todo Title</p>
-                        <p>Time</p>
-                        <p>Description</p>
-                        <p className="">Actions</p>
+                        <p>Mark</p>
+                        <p className="mx-auto">Todo Title</p>
+                        <p className="mx-auto">Time</p>
+                        <p className="mx-auto">Description</p>
+                        <p className="mx-auto">Actions</p>
                     </div>
                     {
                         todos.map((item: JSX.IntrinsicAttributes & { id: string; title: string; description: string; isCompleted?: boolean }) => {
