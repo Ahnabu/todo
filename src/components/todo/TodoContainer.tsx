@@ -1,11 +1,23 @@
 import type { JSX } from "react/jsx-runtime"
-import { useAppSelector } from "../../redux/hook"
+// import { useAppSelector } from "../../redux/hook"
 import TodoCard from "./TodoCard"
 import AddTodoModal from "./AddTodoModal"
 import TodoFilter from "./TodoFilter"
+import { useGetTodosQuery } from "../../redux/api/api"
 
 function TodoContainer() {
-    const { todos } = useAppSelector((state) => state.todos)
+    //form local
+    // const { todos } = useAppSelector((state) => state.todos)
+
+    //from server
+
+    const { data: todos, isLoading, isError } = useGetTodosQuery(undefined)
+    if (isLoading) {
+        return <div className="text-2xl rounded-md font-bold p-5 flex justify-center items-center">Loading...</div>
+    }
+    if (isError) {
+        return <div className="text-2xl rounded-md font-bold p-5 flex justify-center items-center">Something went wrong</div>
+    }
     return (
         <div className="mx-auto text-center ">
             <div className="flex justify-between items-center p-5">
@@ -23,7 +35,7 @@ function TodoContainer() {
                         <p className="mx-auto">Actions</p>
                     </div>
                     {
-                        todos.map((item: JSX.IntrinsicAttributes & { id: string; title: string; description: string; isCompleted?: boolean }) => {
+                        todos?.data?.map((item: JSX.IntrinsicAttributes & { id: string; title: string; description: string; isCompleted?: boolean }) => {
                             return (
                                 <TodoCard
                                     key={item.id}
