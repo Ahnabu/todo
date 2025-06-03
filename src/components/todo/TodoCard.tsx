@@ -23,19 +23,19 @@ const TodoCard = ({ title, description, id, isCompleted }: TTodoCardProps) => {
                 type="checkbox"
                 name="complete"
                 id="complete"
-                className='cursor-pointer accent-[#5C53FE] hover:scale-125 transition-all duration-500 ease-in-out ml-3'
+                className='cursor-pointer accent-[#5C53FE] hover:scale-125 transition-all duration-500 ease-in-out ml-3 **:'
             />
-            <p className="font-semibold mx-auto">{title}</p>
+            <p className="font-semibold flex-1">{title}</p>
             {/* <p>Time</p> */}
-            <div className="flex items-center space-x-2 mx-auto">
+            <div className="flex items-center space-x-2 flex-1">
                 {isCompleted ? (
                     <p className="text-green-500">Done</p>
                 ) : (
                     <p className="text-red-500">Pending</p>
                 )}
             </div>
-            <p className='mx-auto text-center'>{description}</p>
-            <div className="space-x-5 ">
+            <p className='flex-1 text-center'>{description}</p>
+            <div className="space-x-5 flex-1">
                 <Button className="bg-red-500" onClick={() => {
                     dispatch(removeTodo(id))
                 }}>

@@ -29,10 +29,10 @@ function TodoContainer() {
                 <div className=" p-3 h-full rounded-xl space-y-3 w-full">
                     <div className="flex bg-gray-800 rounded-xl font-semibold justify-between p-5 ">
                         <p>Mark</p>
-                        <p className="mx-auto">Todo Title</p>
-                        <p className="mx-auto">Time</p>
-                        <p className="mx-auto">Description</p>
-                        <p className="mx-auto">Actions</p>
+                        <p className="flex-1">Todo Title</p>
+                        <p className="flex-1">Time</p>
+                        <p className="flex-1">Description</p>
+                        <p className="flex-1">Actions</p>
                     </div>
                     {
                         todos?.data?.map((item: JSX.IntrinsicAttributes & { id: string; title: string; description: string; isCompleted?: boolean }) => {
